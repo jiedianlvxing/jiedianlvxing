@@ -1,9 +1,18 @@
 /*
+<<<<<<< HEAD
  * @Description: 
  * @Author: 冯换菊
  * @Date: 2019-11-07 19:23:41
  * @LastEditors: 冯换菊
  * @LastEditTime: 2019-11-14 17:48:54
+=======
+ * @Author: your name
+ * @Date: 2019-11-06 17:39:25
+ * @LastEditTime: 2019-11-13 21:56:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \节点旅行\jiedianlvxing\config\index.js
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
  */
 'use strict'
 // Template version: 1.3.1
@@ -18,6 +27,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
+<<<<<<< HEAD
       '/api': {
           target: 'http://192.168.43.46:8080'
           ,
@@ -26,6 +36,16 @@ module.exports = {
           '^/api': ''
           }
       }
+=======
+      //测试环境
+      '/api': {        
+        target: 'http://192.168.43.46:8080',        
+        changeOrigin: true,       
+         pathRewrite: {          
+           '^/api': ""        
+          }     
+         }
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
     },
 
     // Various Dev Server settings

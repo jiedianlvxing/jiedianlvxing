@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "tarval",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "fhj888 <2013681833@qq.com>",
+=======
+  "name": "jiedianlvxing",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "author": "司媛 <435446085l@qq.com>",
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -13,15 +20,25 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "element-ui": "^2.12.0",
     "mint-ui": "^2.2.13",
     "qs": "^6.9.1",
+=======
+    "axios": "^0.19.0",
+    "element-ui": "^2.12.0",
+    "mint-ui": "^2.2.13",
+    "swiper": "^5.2.0",
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+<<<<<<< HEAD
     "axios": "^0.19.0",
+=======
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-jest": "^21.0.2",
@@ -45,6 +62,10 @@
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
+<<<<<<< HEAD
+=======
+    "json-server": "^0.15.1",
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
     "nightwatch": "^0.9.12",
     "node-notifier": "^5.1.2",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
@@ -61,6 +82,10 @@
     "url-loader": "^0.5.8",
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
+<<<<<<< HEAD
+=======
+    "vue-router": "^3.1.3",
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
@@ -76,5 +101,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
+<<<<<<< HEAD
   ]
+=======
+  ],
+  "main": ".postcssrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "license": "ISC"
+>>>>>>> 195a8cd4f2aa08294044a0295ea35a152a482042
 }
