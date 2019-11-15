@@ -1,23 +1,23 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-11 11:14:39
- * @LastEditTime: 2019-11-14 17:11:28
+ * @LastEditTime: 2019-11-16 02:00:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \节点旅行\jiedianlvxing\src\components\tripinner.vue
  -->
 <template>
     <div id="bigbox">
-        {{typename}}
+        <div style="display:none">{{typename}}</div> 
         <div id="listbox" v-for="(triplist,index) in triplists" :key="index">
-            <!-- <router-link to="'/xiangq'+triplist.id"> -->
-            <img :src="triplist.src" alt="">
+            <router-link :to='"/Dxianq/"+triplist.travellxid'>
+                <img :src="triplist.travellxsrc" alt="">
             <div id="wenben">
-                <h3>{{triplist.title}}</h3>
-            <p>{{triplist.title}}</p>
-            <span>{{triplist.name}}</span>
+                <p id="travellxtitle">{{triplist.travellxtitle}}</p>
+            <p id="travellxpalce">{{triplist.travellxpalce}}</p>
+            <span id="travellxprice">{{triplist.travellxprice}}CNY<span id="trvellxpriceid">起/人</span></span>
             </div>
-            <!-- </router-link> -->
+            </router-link>
         </div>
       
     </div>
@@ -29,7 +29,7 @@ import axios from 'axios';
 export default {
 
     name:"listbox",
-    props:["typename"],
+    props:["typename","id"],
     data(){
     return{
       triplists:[],
@@ -37,12 +37,12 @@ export default {
     }
   },
     created:function() { 
-       axios.all('/api/Travellx/selectTravellxn')
+       axios('Travellx/selectTravellxn')
     //    'http://localhost:3000/traveljx?type='+this.typename
-       .then(res=>{ 
-        this.alltriplists=res.data;
-         this.triplists = this.getbytype(res.data);
-         console.log(this.triplists);
+       .then(response=>{  
+        this.alltriplists=response.data.travellxes;
+         this.triplists = this.getbytype(response.data.travellxes);
+         this.id=this.alltriplists[0].travellxid;
      })
      .catch(err=>{
          console.log(err);
@@ -51,21 +51,17 @@ export default {
         beforeUpdate(){
 
       this.triplists = this.getbytype(this.alltriplists);
+      
   },
             
         methods:{
             getbytype(data){
                 let arr=[];
-                console.log(this.data+"lfghjkvhbjnkm,")
                 for( let i in data){
-                    
-                    if(data[i].type==this.typename){  
-                        console.log(data[i].type);
-                        console.log(this.typename);
+                    if(data[i].travellxfeature==this.typename){  
                             arr.push(data[i]);
                     }
                 }
-                console.log(arr);
                 return arr;
             }
         }
@@ -76,17 +72,15 @@ export default {
 #bigbox{
     width: 100%;
     min-height: 3rem;
-    background-color:pink;
 }
 #listbox{
     width: 100%;
     height: 1.3rem;
     display: flex;
     margin: .2rem 0;
-    background-color: green;
 }
 #listbox img{
-    display: block;
+    display: inline-block;
     width: 35%;
     height: 100%;
     border-radius: 10px;
@@ -100,13 +94,38 @@ export default {
     flex-direction: column;
     justify-content: space-between;
     padding: 2% 0;
+    float: right;
 }
-#wenben p{
-    font-size: 14px;
+#boxbox{
+    width: 100%;
 }
-#wenben span{
-    display: block;
-    font-size: .15rem;
-    color:rgb(201, 142, 15);
+#travellxtitle{
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: .1rem;
+}
+#travellxpalce{
+    width: 90%;
+    height: .2rem;
+    font-size: .13rem;
+    display: inline-block;
+    color: #999;
+}
+#travellxprice{
+       font-size: 14px;
+ display: inline-block;
+ color: rgb(224, 151, 15);
+ font-weight:600; 
+ line-height: .4rem;
+}
+#trvellxpriceid{
+    font-size: 10px;
 }
 </style>

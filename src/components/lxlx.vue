@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-09 15:46:31
- * @LastEditTime: 2019-11-15 09:35:54
+ * @LastEditTime: 2019-11-15 19:07:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \节点旅行\jiedianlvxing\src\components\lxjx.vue
@@ -15,8 +15,6 @@
                     <p id="trvellxtitle">{{jingxuan.travellxtitle}}</p>
                     <span id="type">{{jingxuan.travellxpalce}}</span><br>
                     <p id="trvellxprice">{{jingxuan.travellxprice}}CYN  <span id="trvellxpriceid">起/人</span></p>
-                    
-                    
                 </div>
             </li>
         </ul>

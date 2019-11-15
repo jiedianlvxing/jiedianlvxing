@@ -1,37 +1,35 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-06 19:43:33
- * @LastEditTime: 2019-11-15 10:18:52
+ * @LastEditTime: 2019-11-16 02:29:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \节点旅行\jiedianlvxing\src\pages\index.vue
  -->
 <template>
   <div class="box">
-     <Dxiangqheader></Dxiangqheader>
-     <Dxcxinx></Dxcxinx>
-     <Dcxrs></Dcxrs>
-     <Dxiangqtab></Dxiangqtab>
+     <Dxiangqheader :id="this.$route.params.id"></Dxiangqheader>
   </div>
 </template>
 
 <script>
 import Dxiangqheader from '../components/Dxiangqheader';
-import Dxcxinx from '../components/Dxcxinx';
-import Dcxrs from '../components/Dcxrs';
-import Dxiangqtab from '../components/Dxiangqtab';
 
 
 export default {
   name: 'tripinner',
+  props:["id"],
   data () {
     return {
-      
+     
     }
   },
   components:{
-     Dxiangqheader,Dxcxinx,Dcxrs,Dxiangqtab
-  }
+     Dxiangqheader
+  },
+  mounted(){
+        console.log(this.$route.params.id)
+    }
 }
 </script>
 
@@ -40,6 +38,7 @@ export default {
   display: flex;
   flex-direction: column;
   background-color: rgb(246, 241, 241);
+  overflow: hidden;
 }
 
 

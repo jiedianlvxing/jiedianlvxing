@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-08 17:58:47
- * @LastEditTime: 2019-11-15 10:10:14
+ * @LastEditTime: 2019-11-16 02:07:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \节点旅行\jiedianlvxing\src\components\eletab.vue
@@ -45,16 +45,14 @@ export default {
     axios('Types/selectTypes')
     
     .then( (response)=> { 
-      console.log(response.data.types+"+绿框框");
       
-      console.log(this.types);
       this.types = response.data.types;
-      this.currtype=this.types[0].typestype;
+      this.currtype=this.item.typestype;
       
       })
       
-     .catch(function (error) {           
-       console.log(error); 
+     .catch((error)=> {           
+      
        });
   },
  methods:{

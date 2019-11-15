@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-09 15:46:31
- * @LastEditTime: 2019-11-14 21:52:58
+ * @LastEditTime: 2019-11-16 00:07:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \节点旅行\jiedianlvxing\src\components\lxjx.vue
@@ -11,10 +11,10 @@
         <ul>
             <li v-for="(jingxuan,index) in jingxuans" :key="index">
                 <div id="twbox">
-                    <p id="trivelyjxiangq">{{jingxuan.trivelyjxiangq}}</p>
-                <img id="trivelyjsrc" :src="jingxuan.trivelyjsrc" alt="">
+                    <p id="trivelyjxiangq">{{jingxuan.traveljxtitle}}</p>
+                <img id="trivelyjsrc" :src="jingxuan.traveljxsrc" alt="">
                         <img id="usersrc" :src="jingxuan.user.usersrc" alt="">
-                    <p id="name">{{jingxuan.user.usernc}}</p>
+                    <p id="name">{{jingxuan.user.username}}</p>
                     
                 </div>
             </li>
@@ -32,10 +32,10 @@ export default {
     }
   },
    created:function() { 
-       fetch('/api/Trivelyj/selectTrivelyj')
+       fetch('/api/Traveljx/selectTraveljx')
         .then((res)=>{     return res.text();  }) .then((res)=>{ 
             console.log(res.trivelyjs); 
-        this.jingxuans =  JSON.parse(res).trivelyjs;  }) 
+        this.jingxuans =  JSON.parse(res).traveljxes;  }) 
         },
 
   methods:{

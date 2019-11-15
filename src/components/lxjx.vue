@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-11-09 15:46:31
- * @LastEditTime: 2019-11-14 21:54:21
+ * @LastEditTime: 2019-11-15 19:36:07
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \节点旅行\jiedianlvxing\src\components\lxjx.vue
@@ -101,12 +101,13 @@ export default {
     margin-top: .1rem;
 }
 #box li #type{
-    height: .2rem;
+    height: .15rem;
     border-radius: 10%;
     border: 1px solid #129698;
     padding: 0 5%;
     display: inline-block;
     margin: .1rem 0;
+    font-size: .1rem;
 }
 #twbox{
     margin-left: 5%;
@@ -118,7 +119,6 @@ export default {
     width: 20%;
     height: 20%;
     border-radius: 50%;
-    border: 1px solid red;
     margin-bottom: -10px;
 }
 #name{
